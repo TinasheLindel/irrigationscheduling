@@ -630,17 +630,17 @@
  <div class="sys-card active" onclick="selectSys(this,'semi-ind')">
  <div class="sys-name">Semi-Portable</div>
  <div class="sys-desc">Individual farm</div>
- <span class="sys-tag">FAO §3.2.1</span>
+ <span class="sys-tag">Total dynamic head.1</span>
  </div>
  <div class="sys-card" onclick="selectSys(this,'semi-sh')">
  <div class="sys-name">Semi-Portable</div>
  <div class="sys-desc">Smallholder</div>
- <span class="sys-tag">FAO §3.2.2</span>
+ <span class="sys-tag">Total dynamic head.2</span>
  </div>
  <div class="sys-card" onclick="selectSys(this,'drag-hose')">
  <div class="sys-name">Drag-Hose</div>
  <div class="sys-desc">Smallholder</div>
- <span class="sys-tag">FAO §3.2.3</span>
+ <span class="sys-tag">Total dynamic head.3</span>
  </div>
  <div class="sys-card" onclick="selectSys(this,'solid-set')">
  <div class="sys-name">Solid Set</div>
@@ -1154,25 +1154,25 @@
  <div class="kpi-label">Irrigation Interval</div>
  <div class="kpi-value" id="kpi-if">—</div>
  <div class="kpi-unit">days (peak month)</div>
- <div class="kpi-source">Dnet ÷ wu (FAO Eq.3)</div>
+ <div class="kpi-source">Irrigation interval</div>
  </div>
  <div class="kpi amber">
  <div class="kpi-label">Set Time T<sub>s</sub></div>
  <div class="kpi-value" id="kpi-ts">—</div>
  <div class="kpi-unit">hours / set (peak)</div>
- <div class="kpi-source">d_gross ÷ Pr (FAO Eq.6)</div>
+ <div class="kpi-source">Set time calculation</div>
  </div>
  <div class="kpi red">
  <div class="kpi-label">System Capacity Q</div>
  <div class="kpi-value" id="kpi-q">—</div>
  <div class="kpi-unit">m³ / hr</div>
- <div class="kpi-source">10×A×dg/(I×Ns×T) Eq.5</div>
+ <div class="kpi-source">10×A×dg/(I×Ns×T) 5</div>
  </div>
  <div class="kpi teal">
  <div class="kpi-label">Total Dynamic Head</div>
  <div class="kpi-value" id="kpi-tdh">—</div>
  <div class="kpi-unit">metres</div>
- <div class="kpi-source">Σ(friction + SOP + elev)</div>
+ <div class="kpi-source">Friction + pressure + elevation</div>
  </div>
  </div>
 
@@ -1200,7 +1200,7 @@
  </div>
  </div>
  <div class="table-box" style="margin-top:14px;">
- <div class="table-title">Monthly Schedule Summary — All values auto-computed from inputs &amp; live data</div>
+ <div class="table-title">Monthly Schedule Summary</div>
  <div style="overflow-x:auto;">
  <table>
  <thead><tr>
@@ -1262,11 +1262,11 @@
  <div id="tab-sched" class="tab-pane">
  <div class="chart-grid">
  <div class="chart-box">
- <div class="chart-title">Irrigation Frequency — days between events (FAO Eq. 3)</div>
+ <div class="chart-title">Irrigation Frequency — days between events</div>
  <div class="chart-wrap"><canvas id="chart-freq"></canvas></div>
  </div>
  <div class="chart-box">
- <div class="chart-title">Set Time T<sub>s</sub> per Shift (hr) — FAO Eq. 6</div>
+ <div class="chart-title">Set Time T<sub>s</sub> per Shift (hr)</div>
  <div class="chart-wrap"><canvas id="chart-ts"></canvas></div>
  </div>
  <div class="chart-box wide">
@@ -1301,7 +1301,7 @@
  <div id="tab-hydraulics" class="tab-pane">
  <div class="chart-grid">
  <div class="chart-box">
- <div class="chart-title">TDH Component Breakdown (FAO Table 15 structure)</div>
+ <div class="chart-title">TDH Component Breakdown (TDH Components)</div>
  <div class="chart-wrap"><canvas id="chart-tdh"></canvas></div>
  </div>
  <div class="chart-box">
@@ -1321,7 +1321,7 @@
  <!-- TAB: SYSTEM TYPES -->
  <div id="tab-systypes" class="tab-pane">
  <div class="table-box">
- <div class="table-title">Sprinkler System Type Comparison — FAO-24 Design Parameters</div>
+ <div class="table-title">Sprinkler System Type Comparison — Design Parameters</div>
  <div style="overflow-x:auto;">
  <table>
  <thead><tr>
@@ -1340,7 +1340,7 @@
  <tr><td class="param">Lateral Material</td><td>Aluminium 75 mm</td><td>Aluminium 51 mm</td><td>PVC tertiary + hose</td><td>uPVC or AC</td><td>HDPE hose</td></tr>
  <tr><td class="param">Hydraulic Unit</td><td>Whole scheme</td><td>Whole scheme</td><td>Individual plot</td><td>Block</td><td>Whole field</td></tr>
  <tr><td class="param">System Capacity Eq.</td><td>Q=10×A×dg/(I×Ns×T)</td><td>Q=Nc×Ns×Qs</td><td>Q=Nc×Ns×Qs</td><td>Q=Nc×Ns×Qs</td><td>Per gun Q</td></tr>
- <tr><td class="param">Power (BHP)</td><td colspan="5" style="text-align:center;color:var(--text-dim);">All types: BHP = Q × TDH / (273 × Ep) | kW = Q × TDH / (360 × Ep) — FAO Eq.8 &amp; 9</td></tr>
+ <tr><td class="param">Power (BHP)</td><td colspan="5" style="text-align:center;color:var(--text-dim);">All types: BHP = Q × TDH / (273 × Ep) | kW = Q × TDH / (360 × Ep) — FAO 8</td></tr>
  <tr><td class="param">FAO Reference</td><td>§3.2.1</td><td>§3.2.2</td><td>§3.2.3</td><td>§3</td><td>§FAO-24</td></tr>
  </tbody>
  </table>
@@ -1459,8 +1459,9 @@
   <div class="tabs">
    <div class="tab active" onclick="switchDripTab('drip-water')">Water Balance</div>
    <div class="tab" onclick="switchDripTab('drip-weekly')">Weekly Schedule</div>
-   <div class="tab" onclick="switchDripTab('drip-schematic')">Field Schematic</div>
+   <div class="tab" onclick="switchDripTab('drip-kc')">Kc Curve</div>
    <div class="tab" onclick="switchDripTab('drip-hydraulics')">Hydraulics</div>
+   <div class="tab" onclick="switchDripTab('drip-scenarios')">Scenarios & SMS</div>
   </div>
 
   <!-- DRIP: WATER BALANCE TAB -->
@@ -1468,9 +1469,27 @@
    <div id="drip-alerts" style="margin-bottom:8px;"></div>
    <!-- KPI strip -->
    <div class="kpi-strip" id="drip-kpi-strip" style="margin-bottom:12px;"></div>
+
+   <!-- Drip water balance charts -->
+   <div class="chart-grid" style="margin-bottom:14px;">
+    <div class="chart-box wide">
+     <div class="chart-title">Monthly Water Balance — ETcrop-loc · Rainfall · NIR · IRg</div>
+     <div class="chart-wrap tall"><canvas id="chart-drip-balance"></canvas></div>
+    </div>
+   </div>
+   <div class="chart-grid" style="margin-bottom:14px;">
+    <div class="chart-box">
+     <div class="chart-title">Irrigation Frequency IF (days)</div>
+     <div class="chart-wrap"><canvas id="chart-drip-if"></canvas></div>
+    </div>
+    <div class="chart-box">
+     <div class="chart-title">Daily run time Ta (hr) · Leaching LR (mm/day)</div>
+     <div class="chart-wrap"><canvas id="chart-drip-ta-lr"></canvas></div>
+    </div>
+   </div>
    <!-- Monthly table -->
    <div class="table-box" style="margin-bottom:14px;">
-    <div class="table-title">Monthly Water Balance — Drip System (FAO Localized Irrigation)</div>
+    <div class="table-title">Monthly Water Balance — Drip System</div>
     <div style="overflow-x:auto;">
      <table>
       <thead><tr>
@@ -1485,11 +1504,11 @@
    </div>
    <!-- Emitter design summary -->
    <div class="table-box">
-    <div class="table-title">Emitter Design — Equations 8, 9, 10, 12 (FAO Localized Irrigation)</div>
+    <div class="table-title">Emitter Design — Equations 8, 9, 10, 12</div>
     <div style="overflow-x:auto;">
      <table id="drip-emitter-table">
       <thead><tr>
-       <th class="param">Parameter</th><th>Value</th><th>Equation</th><th>Note</th>
+       <th class="param">Parameter</th><th>Value</th><th>Note</th>
       </tr></thead>
       <tbody id="drip-emitter-body"></tbody>
      </table>
@@ -1520,14 +1539,25 @@
   </div>
 
   <!-- DRIP: FIELD SCHEMATIC TAB -->
-  <div id="tab-drip-schematic" class="tab-pane">
-   <div class="table-box">
-    <div class="table-title">Field Layout — Illustrative Schematic (updates with your inputs)</div>
-    <p style="font-size:10px;color:var(--text-dim);margin-bottom:10px;line-height:1.6;">
-     Schematic is illustrative only — not to scale, not hardcoded. Layout updates as you change field dimensions, tree spacing, number of shifts, and manifold count. Use for planning reference only.
-    </p>
-    <canvas id="drip-schematic-canvas" style="width:100%;border:1px solid var(--border);border-radius:4px;background:#060d18;"></canvas>
-    <div id="drip-schematic-legend" style="margin-top:8px;font-size:9px;color:var(--text-dim);display:flex;gap:16px;flex-wrap:wrap;"></div>
+  <!-- DRIP: Kc CURVE TAB -->
+  <div id="tab-drip-kc" class="tab-pane">
+   <div class="chart-grid">
+    <div class="chart-box wide">
+     <div class="chart-title">Kc Curve — Stage-Based Crop Coefficient with ETcrop-loc</div>
+     <div class="chart-wrap tall"><canvas id="chart-drip-kc"></canvas></div>
+    </div>
+   </div>
+   <div class="table-box" style="margin-top:14px;">
+    <div class="table-title">Kc Stage Summary</div>
+    <div style="overflow-x:auto;">
+     <table>
+      <thead><tr>
+       <th class="param">Stage</th><th>Start Day</th><th>End Day</th>
+       <th>Duration</th><th>Kc range</th><th>ETcrop-loc (mm/day)</th>
+      </tr></thead>
+      <tbody id="drip-kc-stage-body"></tbody>
+     </table>
+    </div>
    </div>
   </div>
 
@@ -1544,7 +1574,7 @@
     </div>
    </div>
    <div class="table-box" style="margin-top:14px;">
-    <div class="table-title">Total Dynamic Head — Drip System (FAO Localized Irrigation §3.2)</div>
+    <div class="table-title">Total Dynamic Head — Drip System</div>
     <div id="drip-tdh-alerts" style="margin-bottom:8px;"></div>
     <div style="overflow-x:auto;">
      <table>
@@ -1556,6 +1586,97 @@
     </div>
    </div>
   </div>
+
+
+  <!-- DRIP: SCENARIOS & SMS TAB -->
+  <div id="tab-drip-scenarios" class="tab-pane">
+
+   <!-- Input row -->
+   <div class="table-box" style="margin-bottom:14px;">
+    <div style="display:flex;align-items:flex-start;gap:16px;flex-wrap:wrap;">
+     <div style="flex:1;min-width:260px;">
+      <div class="table-title" style="margin-bottom:8px;">Plot Size Scenarios</div>
+      <p style="font-size:10px;color:var(--text-dim);margin-bottom:8px;line-height:1.6;">
+       Enter comma-separated plot sizes (ha). Ta, IF, and IRg per plant are the same for all sizes —
+       what changes is the total system capacity Q, total emitter count, total water volume per event,
+       and pump power. Use this to size the pump and pipe network for each farm scale.
+      </p>
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:8px;">
+       <input type="text" id="drip-scenario-areas" value="0.1, 0.25, 0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0, 10.0"
+        style="flex:1;font-family:var(--mono);font-size:11px;"
+        placeholder="e.g. 0.25, 0.5, 1.0, 2.0, 5.0">
+       <button class="btn btn-primary" style="width:auto;padding:7px 16px;margin-top:0;" onclick="runDripScenarios()">Run</button>
+      </div>
+     </div>
+     <div style="min-width:200px;">
+      <div class="table-title" style="margin-bottom:8px;">Range Generator</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-bottom:8px;">
+       <div><label style="font-size:9px;">From (ha)</label><input type="number" id="drip-range-from" value="0.1" step="0.05" min="0.05" style="font-size:11px;"></div>
+       <div><label style="font-size:9px;">To (ha)</label><input type="number" id="drip-range-to" value="5" step="0.5" style="font-size:11px;"></div>
+       <div><label style="font-size:9px;">Steps</label><input type="number" id="drip-range-steps" value="8" min="2" max="20" style="font-size:11px;"></div>
+      </div>
+      <button class="btn btn-green" style="width:100%;padding:6px;margin-top:0;font-size:11px;" onclick="dripGenerateRange()">Generate Range</button>
+     </div>
+    </div>
+   </div>
+
+   <!-- Results table -->
+   <div class="table-box" style="margin-bottom:14px;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+     <div class="table-title" style="margin-bottom:0;">Scenario Results — Peak Month</div>
+     <span id="drip-scenario-peak-label" style="font-size:9px;color:var(--text-dim);"></span>
+    </div>
+    <div style="overflow-x:auto;">
+     <table id="drip-tbl-scenarios">
+      <thead><tr>
+       <th>Plot Size (ha)</th>
+       <th>IF (days)</th>
+       <th>Ta (hr/day)</th>
+       <th>IRg (mm/day)</th>
+       <th>Total Emitters</th>
+       <th>Q System (m³/hr)</th>
+       <th>Water/Event (m³)</th>
+       <th>Power (kW)</th>
+       <th>Field Action</th>
+      </tr></thead>
+      <tbody id="drip-scenario-body">
+       <tr><td colspan="9" style="color:var(--text-faint);padding:20px;text-align:center;">Enter plot sizes and click Run</td></tr>
+      </tbody>
+     </table>
+    </div>
+   </div>
+
+   <!-- Charts -->
+   <div class="chart-grid" style="margin-bottom:14px;">
+    <div class="chart-box">
+     <div class="chart-title">Q System (m³/hr) vs Plot Size</div>
+     <div class="chart-wrap"><canvas id="chart-drip-scenario-q"></canvas></div>
+    </div>
+    <div class="chart-box">
+     <div class="chart-title">Pump Power (kW) vs Plot Size</div>
+     <div class="chart-wrap"><canvas id="chart-drip-scenario-kw"></canvas></div>
+    </div>
+   </div>
+
+   <!-- Bulk SMS -->
+   <div class="table-box">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+     <div class="table-title" style="margin-bottom:0;">Personalised SMS — One Message per Plot Size</div>
+     <div style="display:flex;gap:8px;">
+      <button class="btn btn-primary" style="width:auto;padding:6px 14px;margin-top:0;font-size:11px;" onclick="copyAllDripSMS()">Copy All</button>
+      <button class="btn btn-green" style="width:auto;padding:6px 14px;margin-top:0;font-size:11px;" onclick="exportDripSMS()">Export .txt</button>
+     </div>
+    </div>
+    <p style="font-size:10px;color:var(--text-dim);margin-bottom:10px;line-height:1.6;">
+     Ta and irrigation frequency are identical across plot sizes (per-plant calculation).
+     The SMS contextualises each farmer's daily run time and frequency with their specific system capacity.
+    </p>
+    <div id="drip-sms-block" style="display:flex;flex-direction:column;gap:8px;">
+     <div style="color:var(--text-faint);font-size:10px;padding:16px;text-align:center;">Run scenarios first</div>
+    </div>
+   </div>
+
+  </div><!-- end drip-scenarios tab -->
 
  </div><!-- end drip-tabs-area -->
 
@@ -1909,8 +2030,9 @@ async function fetchTerrain(lat, lon) {
 
   // All endpoints failed
   setDot('terrain','err');
-  document.getElementById('val-terrain').textContent = `Failed (${lastError}) — enter manually`;
-  setSource('terrain','Manual entry — API unavailable','err');
+  const corsNote = window.location.protocol === 'file:' ? ' (CORS blocked on local file — deploy to fix)' : '';
+  document.getElementById('val-terrain').textContent = `Failed${corsNote} — enter manually`;
+  setSource('terrain',`Manual entry — API unavailable${corsNote}`,'err');
   // Show helpful note in terrain panel
   document.getElementById('terrain-display').style.display = 'block';
   document.getElementById('terrain-slope-val').textContent = 'enter manually';
@@ -2375,7 +2497,7 @@ function renderHydraulics(){
  <td class="param">Power req. (kW) at Ep=${(Ep*100).toFixed(0)}%</td>
  <td style="font-family:var(--mono);color:var(--accent-green);">${kw.toFixed(2)}</td>
  <td style="color:var(--accent-green);">${bhp.toFixed(2)} BHP</td>
- <td style="font-size:9px;color:var(--text-dim);">Q×TDH/(360×Ep) FAO Eq.9 · Engine +${marginPct}% = <strong style="color:var(--accent-amber);">${(kw*engineMargin).toFixed(2)} kW / ${(bhp*engineMargin).toFixed(2)} BHP</strong></td></tr>`;
+ <td style="font-size:9px;color:var(--text-dim);">Q×TDH/(360×Ep) FAO 9<strong style="color:var(--accent-amber);">${(kw*engineMargin).toFixed(2)} kW / ${(bhp*engineMargin).toFixed(2)} BHP</strong></td></tr>`;
 
  document.getElementById('tdh-body').innerHTML = html;
 
@@ -3263,6 +3385,12 @@ function setSystemMode(mode) {
  document.getElementById('overhead-tabs-area').style.display = isOverhead ? '' : 'none';
  document.getElementById('drip-tabs-area').style.display     = isOverhead ? 'none' : '';
 
+ // Hide overhead-only UI in drip mode
+ const alertsArea   = document.getElementById('alerts-area');
+ const sourceStrip  = document.getElementById('source-strip');
+ if(alertsArea)  alertsArea.style.display  = isOverhead ? '' : 'none';
+ // Keep source strip visible in both modes — useful for drip too
+
  // Mode toggle button styles
  document.getElementById('sysmode-overhead').style.background = isOverhead ? 'var(--accent-blue)' : 'transparent';
  document.getElementById('sysmode-overhead').style.color      = isOverhead ? '#080f1c' : 'var(--text-dim)';
@@ -3275,23 +3403,21 @@ function setSystemMode(mode) {
    : 'Drip / Trickle Irrigation Scheduling Dashboard';
  document.getElementById('main-sub').textContent = isOverhead
    ? 'FAO-24 Design Framework · Semi-Portable · Drag-Hose · Solid Set · Live Data'
-   : 'FAO Localized Irrigation · Point-Source Drip · Eqs 1-12 · Salinity & Leaching · Live Data';
+   : 'Point-Source Drip · Salinity & Leaching · Live Climate Data';
 
- if (!isOverhead) {
-   recalcDrip();
-   setTimeout(drawDripSchematic, 100);
- }
+ if (!isOverhead) recalcDrip();
 }
 
 function switchDripTab(id) {
  document.querySelectorAll('#drip-tabs-area .tab').forEach((t,i) => {
-   t.classList.toggle('active', ['drip-water','drip-weekly','drip-schematic','drip-hydraulics'][i] === id);
+   t.classList.toggle('active', ['drip-water','drip-weekly','drip-kc','drip-hydraulics','drip-scenarios'][i] === id);
  });
  document.querySelectorAll('#drip-tabs-area .tab-pane').forEach(p => p.classList.remove('active'));
  document.getElementById('tab-' + id).classList.add('active');
  if(id === 'drip-weekly')    { setTimeout(renderDripWeekly, 50); }
- if(id === 'drip-schematic') { setTimeout(drawDripSchematic, 50); }
+ if(id === 'drip-kc')        { setTimeout(drawDripKc, 50); }
  if(id === 'drip-hydraulics'){ setTimeout(renderDripHydraulics, 50); }
+ if(id === 'drip-scenarios') { setTimeout(runDripScenarios, 50); }
 }
 
 // ══════════════════════════════════════════════════════
@@ -3433,42 +3559,38 @@ function recalcDrip() {
    monthlyInSeason[mi]=inDays>0;
  }
 
- // ── Eq.5 — Relative yield ────────────────────────────
- let Yr=1;
- if(ECw>minECe && maxECe>minECe) Yr=(maxECe-ECw)/(maxECe-minECe);
- Yr=Math.max(0,Math.min(1,Yr));
+ // Eq.5 — Relative yield from salinity
+ let Yr = 1;
+ if(ECw > minECe && maxECe > minECe) Yr = (maxECe - ECw) / (maxECe - minECe);
+ Yr = Math.max(0, Math.min(1, Yr));
 
- // ── Eq.6 — Leaching ratio ───────────────────────────
- const LR1 = ECw>0 && maxECe>0 ? ECw/(2*maxECe) : 0;
+ // Eq.6 — Leaching ratio
+ const LR1 = (ECw > 0 && maxECe > 0) ? ECw / (2 * maxECe) : 0;
 
  // Update salinity display
  document.getElementById('drip-yr-val').textContent = (Yr*100).toFixed(1)+'%';
  document.getElementById('drip-yr-val').style.color = Yr<0.85?'var(--accent-red)':Yr<0.95?'var(--accent-amber)':'var(--accent-green)';
  document.getElementById('drip-lr1-val').textContent = LR1.toFixed(3);
 
- // ── Aw — wetted area per emitter ────────────────────
+ // Aw — wetted area per emitter (Table 3, Rainbird 1980)
  const Aw = AW_SOIL[soilType] || 4.0;
 
- // ── Eq.8 — Emitters per plant ───────────────────────
+ // Eq.8 — Emitters per plant
  const areaPerPlant = Sr * Sp;
  const Np_raw = (areaPerPlant * Pw) / Aw;
  const Np = Math.max(1, Math.ceil(Np_raw));
 
- // ── Eq.9 — Emitter spacing Se ───────────────────────
- // Se is user-selected; Np adjusts to achieve target Pw
+ // Eq.10 — Wetted width and actual Pw check
+ const W = Math.sqrt((4 * Aw) / Math.PI);
+ const Pw_actual = (100 * Np * Se * W) / (Sp * Sr);
 
- // ── Eq.10 — Check actual Pw achieved ───────────────
- // W (wetted width) = sqrt(4*Aw/pi) — diameter of wetted circle
- const W = Math.sqrt((4*Aw)/Math.PI);
- const Pw_actual = (100*Np*Se*W)/(Sp*Sr);
-
- // ── Monthly loop ─────────────────────────────────────
- const monthly=[];
- for(let i=0;i<12;i++){
-   const eto   = etoArr[i];
-   const rain  = rainArr[i];
-   const kc_mo = monthlyKc[i];
-   const inSeas= monthlyInSeason[i];
+ // Monthly water balance loop
+ const monthly = [];
+ for(let i = 0; i < 12; i++){
+   const eto    = etoArr[i];
+   const rain   = rainArr[i];
+   const kc_mo  = monthlyKc[i];
+   const inSeas = monthlyInSeason[i];
 
    // Eq.1 — ETcrop-loc = ETo × Kc × Kr
    const ETc_loc = kc_mo * eto * Kr;
@@ -3476,34 +3598,29 @@ function recalcDrip() {
    // Effective rainfall
    const effR = rain * effRain;
 
-   // Eq.2 — IRn = (ETcrop × Kr) - R + LR  [monthly]
-   const R = effR;
+   // Daily water use
+   const wu_mm_day = inSeas ? Math.max(0, ETc_loc/DAYS_M[i] - effR/DAYS_M[i]) : 0;
 
-   // Eq.7 — LR = LR1 × (IRn/Ea) — compute as daily first
-   const wu_mm_day = inSeas ? Math.max(0, ETc_loc/DAYS_M[i] - R/DAYS_M[i]) : 0;
-   const LR_day    = LR1 * (wu_mm_day / Ea);
+   // Eq.7 — LR = LR1 × (IRn/Ea)
+   const LR_day = LR1 * (wu_mm_day / Ea);
 
-   // Gross IRR (mm/day) — Eq.3
-   const IRg_day   = inSeas && wu_mm_day > 0 ? (wu_mm_day / Ea) + LR_day : 0;
+   // Eq.3 — Gross IRR (mm/day)
+   const IRg_day = inSeas && wu_mm_day > 0 ? (wu_mm_day / Ea) + LR_day : 0;
 
    // Available soil moisture per plant
-   const ASM_m3    = (whc/1000) * rzd * areaPerPlant * amd; // m³
-   const ASM_L     = ASM_m3 * 1000;
-   // Replenish fraction = AMD
-   const replenish_L = ASM_L; // full AMD depleted
+   const ASM_L = (whc / 1000) * rzd * areaPerPlant * amd * 1000;
 
-   // Net irrigation per plant (L/day) — Eq.3 applied per plant
-   const netIrr_plant_L = IRg_day * areaPerPlant * Pw; // L/day per plant
+   // Net irrigation per plant (L/day)
+   const netIrr_plant_L = IRg_day * areaPerPlant * Pw;
 
-   // Eq.12 — Ta = IRg / (Np × q) in hrs/day
-   // IRg in mm/day → convert: 1 mm/day over wetted area per plant
-   const IRg_L_plant = IRg_day * areaPerPlant * Pw; // L/day
+   // Eq.12 — Ta = IRg/(Np×q)
+   const IRg_L_plant = IRg_day * areaPerPlant * Pw;
    const Ta = IRg_L_plant > 0 ? IRg_L_plant / (Np * q) : 0;
 
-   // IF (days) = replenish_L / (netIrr_plant_L)
-   const IF = netIrr_plant_L > 0 ? replenish_L / netIrr_plant_L : 999;
+   // IF (days)
+   const IF = netIrr_plant_L > 0 ? ASM_L / netIrr_plant_L : 999;
 
-   // Total plants in field
+   // System Q
    const plantsPerHa = 10000 / (Sr * Sp);
    const totalPlants = plantsPerHa * area;
    const Q_total = (totalPlants * Np * q / nShifts) / 1000; // m³/hr
@@ -3511,89 +3628,84 @@ function recalcDrip() {
    monthly.push({
      eto, rain, kc_mo, inSeas, ETc_loc,
      wu_mm_day, LR_day, IRg_day,
-     ASM_L, replenish_L, netIrr_plant_L,
+     ASM_L, netIrr_plant_L,
      Ta, IF, Q_total, Yr, LR1,
      effR, nir_mm: Math.max(0, ETc_loc - effR)
    });
  }
 
- const peakIdx = monthly.reduce((m,v,i)=>v.wu_mm_day>monthly[m].wu_mm_day?i:m,0);
+ const peakIdx = monthly.reduce((m,v,i) => v.wu_mm_day > monthly[m].wu_mm_day ? i : m, 0);
  const peak    = monthly[peakIdx];
 
- // ── Hydraulics ───────────────────────────────────────
- const fieldLen  = +document.getElementById('drip-field-len').value||300;
- const fieldWid  = +document.getElementById('drip-field-wid').value||150;
- const pumpElev  = +document.getElementById('drip-pump-elev').value||100;
- const highElev  = +document.getElementById('drip-high-elev').value||108;
- const Ep        = (+document.getElementById('drip-pump-eff').value||55)/100;
- const D_lat     = +document.getElementById('drip-lat-d').value||16;
- const D_man     = +document.getElementById('drip-manifold-d').value||50;
- const D_main    = +document.getElementById('drip-main-d').value||75;
+ // Hydraulics
+ const fieldLen  = +document.getElementById('drip-field-len').value || 300;
+ const fieldWid  = +document.getElementById('drip-field-wid').value || 150;
+ const pumpElev  = +document.getElementById('drip-pump-elev').value || 100;
+ const highElev  = +document.getElementById('drip-high-elev').value || 108;
+ const Ep        = (+document.getElementById('drip-pump-eff').value || 55) / 100;
+ const D_lat     = +document.getElementById('drip-lat-d').value || 16;
+ const D_man     = +document.getElementById('drip-manifold-d').value || 50;
+ const D_main    = +document.getElementById('drip-main-d').value || 75;
 
- // Dripline: polyethylene C=150
- // Each dripline carries flow for one row of plants
- const plantsPerRow = fieldLen / Sp;
- const nEmittersPerLine = plantsPerRow * Np;
- const Q_line = (nEmittersPerLine * q) / 1000; // m³/hr per dripline
- const Q_line_s = Q_line / 3600;               // m³/s
- const D_lat_m  = D_lat / 1000;
- const latLen   = fieldWid;                     // lateral runs full field width
- const N_emitters_lat = nEmittersPerLine;
- const F_lat    = fFactor(Math.min(100, Math.round(N_emitters_lat)));
- const hl_lat_full = latLen>0 && Q_line_s>0 ?
-   (10.67 * Math.pow(Q_line_s,1.852) / (Math.pow(150,1.852) * Math.pow(D_lat_m,4.87))) * latLen : 0;
- const hl_lat   = hl_lat_full * F_lat;
+ // ── Drip hydraulics — sized per operating shift (sub-unit) ──────
+ // Key principle: pipes are sized for ONE shift operating at a time.
+ // Q through each pipe = total field Q / nShifts (one sub-unit active).
+ // Dripline carries flow for emitters along its own lateral only.
 
- // Check against allowable 4.5m per hydraulic unit
- const latOK    = hl_lat <= 4.5;
+ // Total system Q (m³/hr) — from peak monthly calc
+ const Q_sys_total = peak.Q_total;          // m³/hr — all shifts, total field
+ const Q_shift     = Q_sys_total / nShifts; // m³/hr — one shift operating
 
- // Manifold: uPVC C=150
- // Number of manifolds = ceil(fieldLen / (manifold spacing))
- // Each manifold serves one shift's laterals
- const nManifolds = nShifts * 2;
- const Q_manifold = peak.Q_total;
- const Q_man_s    = Q_manifold / 3600;
- const D_man_m    = D_man / 1000;
- const manLen     = fieldLen / nManifolds;
- const nLaterals  = Math.round(manLen / Sr);
- const F_man      = fFactor(Math.min(100, nLaterals));
- const hl_man     = Q_man_s>0 ?
-   (10.67*Math.pow(Q_man_s,1.852)/(Math.pow(150,1.852)*Math.pow(D_man_m,4.87)))*manLen*F_man : 0;
+ // Dripline (lateral): one dripline runs along one row
+ // Width of each shift sub-unit = fieldWid / nShifts
+ const shiftWidth     = fieldWid / nShifts;
+ // Number of emitters on one lateral = (shiftWidth / Se) emitters per dripline
+ const nEmitPerLat    = Math.max(1, Math.round(shiftWidth / Se));
+ const Q_lat_m3hr     = (nEmitPerLat * q) / 1000;       // m³/hr per lateral
+ const Q_lat_s        = Q_lat_m3hr / 3600;              // m³/s
+ const D_lat_m        = D_lat / 1000;
+ const latLen         = shiftWidth;
+ const F_lat          = fFactor(Math.min(100, nEmitPerLat));
+ const hl_lat_full    = Q_lat_s > 0 && latLen > 0 ?
+   (10.67 * Math.pow(Q_lat_s, 1.852) / (Math.pow(150, 1.852) * Math.pow(D_lat_m, 4.87))) * latLen : 0;
+ const hl_lat         = hl_lat_full * F_lat;
+ const latOK          = hl_lat <= 4.5;
 
- // Mainline: uPVC
- const Q_main_s   = peak.Q_total / 3600;
- const D_main_m   = D_main / 1000;
- const mainLen    = fieldLen;
- const hl_main    = Q_main_s>0 ?
-   (10.67*Math.pow(Q_main_s,1.852)/(Math.pow(150,1.852)*Math.pow(D_main_m,4.87)))*mainLen : 0;
+ // Manifold: carries flow for all laterals in one shift
+ const nManifolds    = nShifts * 2;        // two manifolds per shift (one each side)
+ const Q_man_s       = Q_shift / 3600;     // m³/s per manifold
+ const D_man_m       = D_man / 1000;
+ const manLen        = fieldLen / 2;       // manifold runs half field length
+ const nLaterals     = Math.max(1, Math.round(manLen / Sr));
+ const F_man         = fFactor(Math.min(100, nLaterals));
+ const hl_man        = Q_man_s > 0 ?
+   (10.67 * Math.pow(Q_man_s, 1.852) / (Math.pow(150, 1.852) * Math.pow(D_man_m, 4.87))) * manLen * F_man : 0;
 
- // Supply line (assumed 25m at same diameter as mainline)
- const supplyLen  = 25;
- const hl_supply  = Q_main_s>0 ?
-   (10.67*Math.pow(Q_main_s,1.852)/(Math.pow(150,1.852)*Math.pow(D_main_m,4.87)))*supplyLen : 0;
+ // Mainline: carries Q for worst case (last two manifolds, i.e. one shift)
+ const Q_main_s      = Q_shift / 3600;
+ const D_main_m      = D_main / 1000;
+ const mainLen       = fieldLen;
+ const hl_main       = Q_main_s > 0 ?
+   (10.67 * Math.pow(Q_main_s, 1.852) / (Math.pow(150, 1.852) * Math.pow(D_main_m, 4.87))) * mainLen : 0;
 
- // Emitter operating pressure (120 kPa = 12 m typical)
- const H_emitter  = 12.0;
+ // Supply line (25m default)
+ const supplyLen     = 25;
+ const hl_supply     = Q_main_s > 0 ?
+   (10.67 * Math.pow(Q_main_s, 1.852) / (Math.pow(150, 1.852) * Math.pow(D_main_m, 4.87))) * supplyLen : 0;
 
- // Control head: 7m (filter + chemigation + meter) — FAO §3.2.1
- const H_control  = 7.0;
-
- // Suction lift
- const H_suction  = 2.0;
-
- // Elevation difference
+ const H_emitter  = 12.0;  // emitter operating pressure = 120 kPa = 12m
+ const H_control  = 7.0;   // control head: filter + chemigation + meter
+ const H_suction  = 2.0;   // suction lift
  const H_elev     = Math.max(0, highElev - pumpElev);
+ const subtotal   = H_suction + hl_supply + H_control + hl_main + hl_man + hl_lat + H_emitter;
+ const H_fittings = subtotal * 0.10;
+ const TDH        = subtotal + H_fittings + H_elev;
 
- // Fittings 10%
- const subtotal   = H_suction+hl_supply+H_control+hl_main+hl_man+hl_lat+H_emitter;
- const H_fittings = subtotal*0.10;
- const TDH        = subtotal+H_fittings+H_elev;
+ // Power — Eq.21 — use shift Q (pump serves one shift at a time)
+ const kw_drip  = Q_shift * TDH / (360 * Ep);
+ const bhp_drip = Q_shift * TDH / (273 * Ep);
 
- // Power (Eq.21)
- const kw_drip    = peak.Q_total * TDH / (360 * Ep);
- const bhp_drip   = peak.Q_total * TDH / (273 * Ep);
-
- // Store
+ // Store results
  dripCalcData = {
    monthly, peakIdx, peak, region, area, nShifts,
    Kr, Yr, LR1, Aw, Np, Np_raw, Se, W, Pw_actual,
@@ -3604,38 +3716,60 @@ function recalcDrip() {
    D_lat, D_man, D_main, latLen, nManifolds, nLaterals,
    hl_lat, hl_man, hl_main, hl_supply, H_emitter,
    H_control, H_suction, H_elev, H_fittings, subtotal, TDH,
-   kw_drip, bhp_drip, F_lat, latOK, Q_total: peak.Q_total
+   kw_drip, bhp_drip, F_lat, latOK, Q_total: peak.Q_total,
+   Q_shift, shiftWidth, nEmitPerLat, Q_lat_m3hr
  };
 
- // Update KPI strip
+ // Render water balance
  renderDripKPIs();
  renderDripTable();
  renderDripEmitterSummary();
- // Re-render active drip tab
+ renderDripCharts();
+
+ // Show design basis alert
+ const Q_shift_val = (peak.Q_total / nShifts).toFixed(2);
+ const dripAlerts = document.getElementById('drip-alerts');
+ if(dripAlerts){
+   let al = `<div class="alert info" style="font-size:10px;">
+     Q Total=${peak.Q_total.toFixed(2)} m³/hr (all ${nShifts} shifts) |
+     Q per shift=${Q_shift_val} m³/hr (pump sizing basis) |
+     TDH sized for one shift operating at a time.
+     Q changes with: irrigable area, Sr×Sp spacing, emitter discharge, nShifts.
+     Q does not change with field dimensions alone.
+   </div>`;
+   if(dripCalcData.latOK === false){
+     al += `<div class="alert warn" style="font-size:10px;">Dripline HL exceeds 4.5m allowable — increase lateral diameter or reduce lateral length.</div>`;
+   }
+   dripAlerts.innerHTML = al;
+ }
+
+ // Re-render active tab
  const activePane = document.querySelector('#drip-tabs-area .tab-pane.active');
  if(activePane){
    const id = activePane.id.replace('tab-','');
-   if(id==='drip-weekly')    renderDripWeekly();
+   if(id==='drip-weekly')     renderDripWeekly();
+   if(id==='drip-kc')         drawDripKc();
    if(id==='drip-hydraulics') renderDripHydraulics();
-   if(id==='drip-schematic') drawDripSchematic();
+   if(id==='drip-scenarios')  runDripScenarios();
  }
 }
 
+
 function renderDripKPIs() {
- const {peak,peakIdx,Yr,TDH,kw_drip,Np,Se,Pw_actual,area,Q_total} = dripCalcData;
+ const {peak,peakIdx,Yr,TDH,kw_drip,Np,Pw_actual,Q_total,nShifts} = dripCalcData;
+ const Q_shift = Q_total / nShifts;
  const MONTH_NAMES=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
- const Ta_h=Math.floor(peak.Ta); const Ta_m=Math.round((peak.Ta-Ta_h)*60);
- const TaStr=`${Ta_h>0?Ta_h+'hr ':''} ${Ta_m}min`;
  const strip=document.getElementById('drip-kpi-strip');
  strip.innerHTML=`
-   <div class="kpi"><div class="kpi-val" style="color:var(--accent-amber)">${peak.Ta.toFixed(2)}</div><div class="kpi-label">Ta Peak (hr/day)</div><div class="kpi-source">Eq.12 daily run time</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-amber)">${peak.Ta.toFixed(2)}</div><div class="kpi-label">Ta Peak (hr/day)</div><div class="kpi-source">Daily run time per plant</div></div>
    <div class="kpi"><div class="kpi-val" style="color:var(--accent-blue)">${peak.IF>99?'>99':peak.IF.toFixed(1)}</div><div class="kpi-label">IF Peak (days)</div><div class="kpi-source">${MONTH_NAMES[peakIdx]} peak demand</div></div>
-   <div class="kpi"><div class="kpi-val" style="color:var(--accent-green)">${peak.IRg_day.toFixed(2)}</div><div class="kpi-label">IRg Peak (mm/day)</div><div class="kpi-source">Eq.3 incl. leaching</div></div>
-   <div class="kpi"><div class="kpi-val" style="color:${Yr<0.9?'var(--accent-red)':'var(--accent-green)'}">${(Yr*100).toFixed(1)}%</div><div class="kpi-label">Relative Yield Yr</div><div class="kpi-source">Eq.5 salinity effect</div></div>
-   <div class="kpi"><div class="kpi-val" style="color:var(--accent-teal)">${Np}</div><div class="kpi-label">Emitters/Plant Np</div><div class="kpi-source">Eq.8 Aw=${dripCalcData.Aw}m²</div></div>
-   <div class="kpi"><div class="kpi-val" style="color:var(--accent-amber)">${TDH.toFixed(1)}</div><div class="kpi-label">TDH (m)</div><div class="kpi-source">FAO §3.2</div></div>
-   <div class="kpi"><div class="kpi-val" style="color:var(--accent-green)">${kw_drip.toFixed(2)}</div><div class="kpi-label">Power (kW)</div><div class="kpi-source">Eq.21a</div></div>
-   <div class="kpi"><div class="kpi-val" style="color:var(--accent-blue)">${Q_total.toFixed(2)}</div><div class="kpi-label">Q System (m³/hr)</div><div class="kpi-source">Peak month</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-green)">${peak.IRg_day.toFixed(2)}</div><div class="kpi-label">IRg Peak (mm/day)</div><div class="kpi-source">Gross incl. leaching</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:${Yr<0.9?'var(--accent-red)':'var(--accent-green)'}">${(Yr*100).toFixed(1)}%</div><div class="kpi-label">Relative Yield Yr</div><div class="kpi-source">Salinity effect</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-teal)">${Np}</div><div class="kpi-label">Emitters/Plant Np</div><div class="kpi-source">Aw=${dripCalcData.Aw}m²</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-amber)">${TDH.toFixed(1)}</div><div class="kpi-label">TDH (m)</div><div class="kpi-source">Per shift sub-unit</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-green)">${kw_drip.toFixed(2)}</div><div class="kpi-label">Power (kW)</div><div class="kpi-source">Q×TDH/(360×Ep)</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-blue)">${Q_total.toFixed(2)}</div><div class="kpi-label">Q Total (m³/hr)</div><div class="kpi-source">Full field, all shifts</div></div>
+   <div class="kpi"><div class="kpi-val" style="color:var(--accent-teal)">${Q_shift.toFixed(2)}</div><div class="kpi-label">Q Per Shift (m³/hr)</div><div class="kpi-source">Pump sizing basis</div></div>
  `;
 }
 
@@ -3675,27 +3809,26 @@ function renderDripEmitterSummary() {
  const taWarn = d.peak.Ta > 22 ? `<div class="alert warn">Ta=${d.peak.Ta.toFixed(1)} hr/day exceeds ASAE max 22 hr/day — increase emitter discharge or number of emitters.</div>` : '';
  const pwNote = d.Pw_actual > 100 ? 'exceeds 100% — reduce Np or Se' : `actual Pw = ${Math.min(100,d.Pw_actual).toFixed(0)}%`;
  const rows=[
-   ['Ground cover GC',      `${d.gc}%`,                  'Input',     'Canopy cover % (mature crop)'],
-   ['Kr (Freeman & Garzoli)',`${d.Kr.toFixed(3)}`,        'Table 1',   'Ground cover reduction factor'],
-   ['Aw — wetted area/emitter',`${d.Aw} m²`,             'Table 3',   `${d.soilType||'loam'} soil`],
-   ['Emitters per plant Np', `${d.Np} (raw: ${d.Np_raw.toFixed(2)})`, 'Eq.8', `Np = (Sr×Sp×Pw)/Aw`],
-   ['Emitter spacing Se',    `${d.Se} m`,                 'Eq.9',      `Se = Sp/Np = ${d.Sp}/${d.Np} = ${(d.Sp/d.Np).toFixed(2)}m`],
-   ['Wetted width W',        `${d.W.toFixed(2)} m`,       'Eq.11',     `W = sqrt(4×Aw/π)`],
-   ['Pw achieved',           `${Math.min(100,d.Pw_actual).toFixed(1)}%`, 'Eq.10', pwNote],
-   ['Relative yield Yr',     `${(d.Yr*100).toFixed(1)}%`, 'Eq.5',      `ECw=${d.ECw} vs max ${d.maxECe} dS/m`],
-   ['Leaching ratio LR1',    `${d.LR1.toFixed(3)}`,       'Eq.6',      `LR1 = ECw / (2 × maxECe)`],
-   ['LR peak month (mm/d)',  `${d.peak.LR_day.toFixed(3)}`,'Eq.7',     `LR = LR1 × (IRn/Ea)`],
-   ['IRg peak (mm/day)',     `${d.peak.IRg_day.toFixed(3)}`,'Eq.3',    `= ETcrop-loc/Ea + LR`],
-   ['Ta peak (hr/day)',      `${d.peak.Ta.toFixed(2)}`,   'Eq.12',     `Ta = IRg/(Np×q) — max 22 hr`],
-   ['Peak IF (days)',        `${d.peak.IF>99?'no irrig.':d.peak.IF.toFixed(2)}`, '—', `${MONTH_NAMES[d.peakIdx]} peak`],
-   ['Q system peak (m³/hr)', `${d.Q_total.toFixed(3)}`,   'Eq.12',     `All emitters × nShifts`],
+   ['Ground cover GC',       `${d.gc}%`,                               'Canopy cover (mature crop)'],
+   ['Kr reduction factor',   `${d.Kr.toFixed(3)}`,                      'Freeman & Garzoli (Table 1)'],
+   ['Aw — wetted area/emitter',`${d.Aw} m²`,                           `${d.soilType||'loam'} soil (Rainbird 1980)`],
+   ['Emitters per plant Np', `${d.Np} (raw: ${d.Np_raw.toFixed(2)})`,  `Np = (Sr×Sp×Pw)/Aw`],
+   ['Emitter spacing Se',    `${d.Se} m`,                               `Se = Sp/Np = ${d.Sp}/${d.Np} = ${(d.Sp/d.Np).toFixed(2)}m`],
+   ['Wetted width W',        `${d.W.toFixed(2)} m`,                     `W = sqrt(4×Aw/π)`],
+   ['Pw achieved',           `${Math.min(100,d.Pw_actual).toFixed(1)}%`,pwNote],
+   ['Relative yield Yr',     `${(d.Yr*100).toFixed(1)}%`,               `ECw=${d.ECw} vs max ${d.maxECe} dS/m`],
+   ['Leaching ratio LR1',    `${d.LR1.toFixed(3)}`,                     `ECw / (2 × maxECe)`],
+   ['LR peak month (mm/d)',  `${d.peak.LR_day.toFixed(3)}`,             `LR = LR1 × (IRn/Ea)`],
+   ['IRg peak (mm/day)',     `${d.peak.IRg_day.toFixed(3)}`,            `ETcrop-loc/Ea + LR`],
+   ['Ta peak (hr/day)',      `${d.peak.Ta.toFixed(2)}`,                 `Ta = IRg/(Np×q), max 22 hr/day`],
+   ['Peak IF (days)',        `${d.peak.IF>99?'no irrig.':d.peak.IF.toFixed(2)}`, `${MONTH_NAMES[d.peakIdx]} peak month`],
+   ['Q system peak (m³/hr)',`${d.Q_total.toFixed(3)}`,                  `All emitters / nShifts`],
  ];
  let html = taWarn;
- for(const [lbl,val,eq,note] of rows){
+ for(const [lbl,val,note] of rows){
    html+=`<tr>
      <td class="param">${lbl}</td>
      <td style="font-family:var(--mono);color:var(--accent-amber);font-weight:700;">${val}</td>
-     <td style="font-size:10px;color:var(--accent-blue);">${eq}</td>
      <td style="font-size:10px;color:var(--text-dim);">${note}</td>
    </tr>`;
  }
@@ -3714,33 +3847,55 @@ function renderDripWeekly() {
    const dIM=DAYS_M[mi];
    [7,7,7,dIM-21].forEach((wd,wi)=>{
      if(wd<=0) return;
-     const weekIRg=m.IRg_day*wd;
-     const weekETc=m.ETc_loc*(wd/dIM);
-     const weekRain=m.rain*(wd/dIM);
-     const surplus=weekRain>=weekETc;
-     const offSeas=!m.inSeas;
-     const TaH=Math.floor(m.Ta); const TaM=Math.round((m.Ta-TaH)*60);
-     const TaStr=offSeas?'—':`${TaH>0?TaH+'hr ':''} ${TaM}min`;
-     const IFStr=offSeas?'Off-season':m.IF>99?'No irrig.':m.IF.toFixed(1)+' days';
-     let action='';
-     if(offSeas) action='Off-season — rest field';
-     else if(surplus) action=`Skip — rainfall covers ETc`;
-     else if(m.IF<7) action=`Run ${TaStr}/day. Irrigate every ${m.IF.toFixed(1)} days. IRg=${m.IRg_day.toFixed(2)}mm/day.`;
-     else action=`Run ${TaStr}/day. Next event in ${m.IF.toFixed(1)} days.`;
-     weeks.push({mi,label:`${MONTH_NAMES[mi].slice(0,3)} W${wi+1}`,
-       startDay:wi*7+1,endDay:Math.min((wi+1)*7,dIM),wd,
-       weekIRg,weekETc,weekRain,surplus,offSeas,isPeak:mi===peakIdx&&!offSeas,
-       Ta:m.Ta,TaStr,IFStr,action,IF:m.IF,IRg:m.IRg_day,netL:m.netIrr_plant_L});
+     const weekIRg  = m.IRg_day * wd;
+     const weekETc  = m.inSeas ? m.ETc_loc * (wd/dIM) : 0;
+     const weekRain = m.rain * (wd/dIM);
+     // surplus only meaningful in-season; off-season is always rest
+     const offSeas  = !m.inSeas;
+     const surplus  = !offSeas && m.IRg_day < 0.001; // rainfall already met demand in recalc
+     const noIrrig  = !offSeas && m.IF > 99;
+
+     const TaH = Math.floor(m.Ta); const TaM = Math.round((m.Ta-TaH)*60);
+     const TaStr = (offSeas || surplus || noIrrig) ? '—' :
+                   `${TaH>0?TaH+'hr ':''} ${TaM}min`;
+
+     // IF display — contextualise long intervals
+     let IFStr;
+     if(offSeas)      IFStr = 'Off-season';
+     else if(noIrrig) IFStr = 'No irrig. needed';
+     else if(surplus) IFStr = 'Skip — surplus';
+     else if(m.IF >= 7)  IFStr = `${m.IF.toFixed(1)} days`;
+     else             IFStr = `${m.IF.toFixed(1)} days`;
+
+     // Column colours
+     let colourClass = offSeas ? 'off' : surplus||noIrrig ? 'green' : mi===peakIdx ? 'peak' : 'normal';
+
+     // Field action — plain language, contextual
+     let action;
+     if(offSeas)        action = 'Off-season — rest field. No irrigation required.';
+     else if(surplus||noIrrig) action = `Skip — rainfall (${weekRain.toFixed(0)}mm) meets crop demand. Monitor soil moisture.`;
+     else if(m.IF >= wd) action = `No irrigation event due this week (IF=${m.IF.toFixed(1)}d > ${wd}d). Monitor soil. Next event in ${m.IF.toFixed(1)} days.`;
+     else if(m.IF < 2)   action = `Run drip ${TaStr}/day every day. Very high demand — check system capacity.`;
+     else                action = `Run drip ${TaStr}/day. Irrigate every ${m.IF.toFixed(1)} days. Apply ${m.IRg_day.toFixed(2)}mm/day (${m.netIrr_plant_L.toFixed(3)}L/plant).`;
+
+     weeks.push({mi, label:`${MONTH_NAMES[mi].slice(0,3)} W${wi+1}`,
+       startDay:wi*7+1, endDay:Math.min((wi+1)*7,dIM), wd,
+       weekIRg, weekETc, weekRain, surplus, offSeas, noIrrig,
+       isPeak: mi===peakIdx && !offSeas,
+       colourClass, Ta:m.Ta, TaStr, IFStr, action,
+       IF:m.IF, IRg:m.IRg_day, netL:m.netIrr_plant_L});
    });
  });
  const head=document.getElementById('drip-weekly-head');
  const body=document.getElementById('drip-weekly-body');
  let hRow=`<th style="min-width:180px;padding:6px 8px;background:var(--surface);color:var(--text-dim);font-size:10px;">Parameter</th>`;
  weeks.forEach(w=>{
-   const bg=w.offSeas?'rgba(61,84,112,0.2)':w.surplus?'rgba(46,204,138,0.15)':w.isPeak?'rgba(245,166,35,0.18)':'var(--surface)';
-   const col=w.offSeas?'var(--text-faint)':w.surplus?'var(--accent-green)':w.isPeak?'var(--accent-amber)':'var(--text-dim)';
+   const bg  = w.offSeas ? 'rgba(61,84,112,0.2)' : w.surplus||w.noIrrig ? 'rgba(46,204,138,0.15)' : w.isPeak ? 'rgba(245,166,35,0.18)' : 'var(--surface)';
+   const col = w.offSeas ? 'var(--text-faint)'   : w.surplus||w.noIrrig ? 'var(--accent-green)'   : w.isPeak ? 'var(--accent-amber)'    : 'var(--text-dim)';
+   const tag = w.offSeas ? 'OFF' : (w.surplus||w.noIrrig) ? 'SKIP' : w.isPeak ? 'PEAK' : '';
    hRow+=`<th style="min-width:110px;background:${bg};color:${col};font-size:9px;padding:5px 4px;text-align:center;border-left:1px solid var(--border);">
      ${w.label}<br><span style="font-size:8px;opacity:0.8;">${w.startDay}–${w.endDay}</span>
+     ${tag?`<br><span style="font-size:8px;font-weight:700;">${tag}</span>`:''}
    </th>`;
  });
  head.innerHTML=hRow;
@@ -3759,7 +3914,7 @@ function renderDripWeekly() {
    if(r.divider){bHtml+=`<tr><td colspan="${weeks.length+1}" style="padding:1px;background:var(--border);height:1px;"></td></tr>`;return;}
    bHtml+=`<tr><td class="param" style="${r.bold?'font-weight:700;':''}">${r.label}</td>`;
    weeks.forEach(w=>{
-     const bg=w.offSeas?'rgba(61,84,112,0.05)':w.surplus?'rgba(46,204,138,0.06)':w.isPeak?'rgba(245,166,35,0.07)':'';
+     const bg=w.offSeas?'rgba(61,84,112,0.05)':w.surplus||w.noIrrig?'rgba(46,204,138,0.06)':w.isPeak?'rgba(245,166,35,0.07)':'';
      bHtml+=`<td style="font-family:var(--${r.bold?'serif':'mono'});font-size:10px;color:var(--text);background:${bg};border-left:1px solid var(--border);padding:5px 4px;text-align:center;${r.tall?'white-space:normal;max-width:120px;word-wrap:break-word;':''}">${r.fn(w)}</td>`;
    });
    bHtml+=`</tr>`;
@@ -3809,86 +3964,363 @@ function renderDripHydraulics() {
  let html='';
  for(const [c,v] of comps){
    const pct=(v/d.TDH*100).toFixed(1);
-   html+=`<tr><td class="param">${c}</td><td style="font-family:var(--mono);">${v.toFixed(3)}</td><td>${pct}%</td><td style="font-size:9px;color:var(--text-dim);">${c==='Control Head'?'Filter + chemigation + meter (FAO §3.2.1)':c==='Emitter Pressure'?'Ha=12m (120kPa typical)':''}</td></tr>`;
+   html+=`<tr><td class="param">${c}</td><td style="font-family:var(--mono);">${v.toFixed(3)}</td><td>${pct}%</td><td style="font-size:9px;color:var(--text-dim);">${c==='Control Head'?'Filter + chemigation + water meter':c==='Emitter Pressure'?'Ha=12m (120kPa typical)':''}</td></tr>`;
  }
  html+=`<tr style="background:var(--surface3);"><td class="param" style="font-weight:700;">TOTAL DYNAMIC HEAD</td><td style="font-family:var(--mono);font-weight:700;color:var(--accent-amber);font-size:14px;">${d.TDH.toFixed(2)}</td><td>100%</td><td></td></tr>`;
- html+=`<tr><td class="param">Power (kW) Ep=${(d.Ep*100).toFixed(0)}%</td><td style="font-family:var(--mono);color:var(--accent-green);">${d.kw_drip.toFixed(2)}</td><td>${d.bhp_drip.toFixed(2)} BHP</td><td style="font-size:9px;color:var(--text-dim);">Eq.21a: Q×H/(360×e) · +20% engine = ${(d.kw_drip*1.2).toFixed(2)} kW</td></tr>`;
+ html+=`<tr><td class="param">Power (kW) Ep=${(d.Ep*100).toFixed(0)}%</td><td style="font-family:var(--mono);color:var(--accent-green);">${d.kw_drip.toFixed(2)}</td><td>${d.bhp_drip.toFixed(2)} BHP</td><td style="font-size:9px;color:var(--text-dim);">21a:</td></tr>`;
  document.getElementById('drip-tdh-body').innerHTML=html;
 }
 
-function drawDripSchematic() {
- if(!dripCalcData.fieldLen) return;
- const canvas=document.getElementById('drip-schematic-canvas');
- const d=dripCalcData;
- const W=canvas.offsetWidth||700;
- const H=Math.round(W*(d.fieldLen/d.fieldWid)*0.4);
- canvas.width=W; canvas.height=Math.max(H,300);
- const ctx=canvas.getContext('2d');
- ctx.clearRect(0,0,W,canvas.height);
 
- const pad=40;
- const fw=W-pad*2; const fh=canvas.height-pad*2;
- const sx=W/d.fieldWid; const sy=canvas.height/d.fieldLen;
 
- // Field border
- ctx.strokeStyle='#243a5e'; ctx.lineWidth=1.5;
- ctx.strokeRect(pad,pad,fw,fh);
- ctx.fillStyle='rgba(14,24,38,0.7)'; ctx.fillRect(pad,pad,fw,fh);
+// ══════════════════════════════════════════════════════
+// DRIP Kc CURVE
+// ══════════════════════════════════════════════════════
+function drawDripKc() {
+ if(!dripCalcData.monthly) return;
+ const d = dripCalcData;
+ const lini  = d.lini, ldev = d.ldev, lmid = d.lmid, llate = d.llate;
+ const kci   = d.kc_ini, kcm = d.kc_mid, kce = d.kc_end;
+ const Kr    = d.Kr;
+ const total = lini + ldev + lmid + llate;
 
- // Driplines (horizontal, along field width)
- const rowSpacingPx=d.Sr*sy;
- ctx.strokeStyle='rgba(77,184,255,0.35)'; ctx.lineWidth=0.8;
- let rowY=pad+rowSpacingPx/2;
- while(rowY<pad+fh){ctx.beginPath();ctx.moveTo(pad,rowY);ctx.lineTo(pad+fw,rowY);ctx.stroke();rowY+=rowSpacingPx;}
-
- // Manifolds (vertical, dividing field into sub-units)
- const manSpacingPx=fw/d.nManifolds;
- ctx.strokeStyle='rgba(46,204,138,0.7)'; ctx.lineWidth=2;
- for(let i=1;i<d.nManifolds;i++){
-   const x=pad+i*manSpacingPx;
-   ctx.beginPath();ctx.moveTo(x,pad);ctx.lineTo(x,pad+fh);ctx.stroke();
+ // Build per-day ETo from monthly arrays (same logic as overhead drawKc)
+ function etoForSeasonDay(day) {
+   let cum = 0;
+   for(let i = 0; i < 12; i++) {
+     const mi = (d.plantMo + i) % 12;
+     cum += DAYS_M[mi];
+     if(day <= cum) return d.monthly[mi].eto / DAYS_M[mi];
+   }
+   return 4.5;
  }
 
- // Mainline (right edge, vertical)
- ctx.strokeStyle='#f5a623'; ctx.lineWidth=3;
- ctx.beginPath();ctx.moveTo(pad+fw,pad);ctx.lineTo(pad+fw,pad+fh);ctx.stroke();
+ const days=[], kcs=[], etcLoc=[], bgCols=[];
+ const stCols=['rgba(77,184,255,0.25)','rgba(46,204,138,0.25)','rgba(245,166,35,0.25)','rgba(224,82,82,0.25)'];
+ for(let day = 1; day <= total; day++) {
+   days.push(day);
+   let kv, col;
+   if(day <= lini)                   { kv = kci; col = stCols[0]; }
+   else if(day <= lini+ldev)         { kv = kci + (kcm-kci)*(day-lini)/ldev; col = stCols[1]; }
+   else if(day <= lini+ldev+lmid)    { kv = kcm; col = stCols[2]; }
+   else                               { kv = kcm + (kce-kcm)*(day-lini-ldev-lmid)/llate; col = stCols[3]; }
+   kcs.push(+kv.toFixed(3));
+   // ETcrop-loc = ETo × Kc × Kr (Eq.1)
+   etcLoc.push(+(kv * Kr * etoForSeasonDay(day)).toFixed(2));
+   bgCols.push(col);
+ }
 
- // Supply line (bottom)
- ctx.strokeStyle='#e05252'; ctx.lineWidth=2.5;
- ctx.beginPath();ctx.moveTo(pad+fw,pad+fh);ctx.lineTo(pad+fw+20,pad+fh+20);ctx.stroke();
+ destroyChart('drip-kc');
+ const ctx = document.getElementById('chart-drip-kc').getContext('2d');
+ charts['drip-kc'] = new Chart(ctx, {
+   data:{ labels: days, datasets:[
+     { type:'bar',  label:'Stage bg', data:kcs, backgroundColor:bgCols, borderWidth:0,
+       barPercentage:1.0, categoryPercentage:1.0, yAxisID:'y', order:3 },
+     { type:'line', label:'Kc', data:kcs, borderColor:'#2ecc8a', borderWidth:2.5,
+       tension:0.1, fill:false, pointRadius:0, yAxisID:'y', order:1 },
+     { type:'line', label:'ETcrop-loc (mm/day)', data:etcLoc, borderColor:'#4db8ff',
+       borderWidth:1.5, tension:0.1, fill:false, pointRadius:0, yAxisID:'y1', order:2 },
+   ]},
+   options:{ ...CHART_OPTS,
+     scales:{
+       x:{ ...CHART_OPTS.scales.x, title:{display:true,text:'Day of Season',color:'#7a9ab8',font:{family:"'Times New Roman'"}} },
+       y:{ ...CHART_OPTS.scales.y, min:0, max:1.5,
+           title:{display:true,text:'Kc',color:'#2ecc8a',font:{family:"'Times New Roman'"}} },
+       y1:{ position:'right', ticks:{color:'#4db8ff',font:{size:9,family:"'Times New Roman'"}},
+            grid:{drawOnChartArea:false},
+            title:{display:true,text:'ETcrop-loc (mm/day)',color:'#4db8ff',font:{family:"'Times New Roman'"}}, min:0 }
+     }
+   }
+ });
 
- // Labels
- ctx.fillStyle='rgba(77,184,255,0.8)'; ctx.font=`9px 'Times New Roman'`;
- ctx.fillText(`Driplines (${d.Sr}m spacing) — ${d.D_lat}mm polyethylene`,pad+4,pad+14);
- ctx.fillStyle='rgba(46,204,138,0.9)';
- ctx.fillText(`Manifolds ×${d.nManifolds} — ${d.D_man}mm uPVC`,pad+4,pad+28);
- ctx.fillStyle='#f5a623';
- ctx.fillText(`Mainline — ${d.D_main}mm uPVC`,pad+fw-120,pad+14);
- ctx.fillStyle='#94a3b8';
- ctx.fillText(`${d.fieldLen}m`,pad-32,pad+fh/2);
- ctx.fillText(`${d.fieldWid}m`,pad+fw/2-15,pad+fh+16);
+ // Stage summary table
+ const MONTH_NAMES=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ const harvestMo = (d.plantMo + Math.ceil(total/30) - 1) % 12;
+ const stages=[
+   ['Initial',    1,              lini,              kci, kci],
+   ['Development',lini+1,         lini+ldev,         kci, kcm],
+   ['Mid-Season', lini+ldev+1,    lini+ldev+lmid,    kcm, kcm],
+   ['Late Season',lini+ldev+lmid+1, total,           kcm, kce]
+ ];
+ let html=`<tr style="background:var(--surface3);">
+   <td class="param" colspan="6" style="font-size:10px;color:var(--text-dim);">
+     Plant: ${MONTH_NAMES[d.plantMo]} | Harvest: ${MONTH_NAMES[harvestMo]} |
+     Season: ${total} days | Kr=${Kr.toFixed(3)} (GC=${d.gc}%) | Peak Kc=${kcm}
+   </td></tr>`;
+ for(const [s,st,en,k1,k2] of stages) {
+   const dur = en - st + 1;
+   const midDay = Math.round((st+en)/2);
+   const eto_stage = etoForSeasonDay(midDay);
+   const etcMin = (k1 * Kr * eto_stage).toFixed(2);
+   const etcMax = (k2 * Kr * eto_stage).toFixed(2);
+   html += `<tr>
+     <td class="param">${s}</td>
+     <td style="font-family:var(--mono);">${st}</td>
+     <td style="font-family:var(--mono);">${en}</td>
+     <td style="font-family:var(--mono);">${dur} days</td>
+     <td style="font-family:var(--mono);color:var(--accent-green);">${k1.toFixed(2)}–${k2.toFixed(2)}</td>
+     <td style="font-family:var(--mono);color:var(--accent-blue);">${etcMin}–${etcMax}</td>
+   </tr>`;
+ }
+ document.getElementById('drip-kc-stage-body').innerHTML = html;
+}
 
- // Pump icon
- ctx.fillStyle='#e05252';
- ctx.beginPath();ctx.arc(pad+fw+20,pad+fh+20,8,0,2*Math.PI);ctx.fill();
- ctx.fillStyle='#dce8f5'; ctx.font=`9px 'Times New Roman'`;
- ctx.fillText('Pump',pad+fw+28,pad+fh+24);
+// ══════════════════════════════════════════════════════
+// DRIP SCENARIO RUNNER
+// ══════════════════════════════════════════════════════
+function dripGenerateRange() {
+ const from  = +document.getElementById('drip-range-from').value  || 0.1;
+ const to    = +document.getElementById('drip-range-to').value    || 5;
+ const steps = +document.getElementById('drip-range-steps').value || 8;
+ const vals  = [];
+ for(let i = 0; i < steps; i++) {
+   const v = from + (to - from) * i / (steps - 1);
+   vals.push(parseFloat(v.toFixed(2)));
+ }
+ document.getElementById('drip-scenario-areas').value = vals.join(', ');
+ runDripScenarios();
+}
 
- // Control head
- ctx.fillStyle='rgba(167,139,250,0.7)';
- ctx.fillRect(pad+fw-12,pad+fh-24,24,20);
- ctx.fillStyle='#dce8f5'; ctx.font=`8px 'Times New Roman'`;
- ctx.fillText('CH',pad+fw-8,pad+fh-10);
+function runDripScenarios() {
+ if(!dripCalcData.monthly || !dripCalcData.peak) return;
+ const d   = dripCalcData;
+ const peak = d.peak;
+ const MONTH_NAMES=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
- // Legend
- document.getElementById('drip-schematic-legend').innerHTML=`
-   <span style="color:rgba(77,184,255,0.8);">— Driplines (${d.D_lat}mm PE)</span>
-   <span style="color:rgba(46,204,138,0.9);">— Manifolds ×${d.nManifolds} (${d.D_man}mm uPVC)</span>
-   <span style="color:#f5a623;">— Mainline (${d.D_main}mm uPVC)</span>
-   <span style="color:#e05252;">— Supply/Pump</span>
-   <span style="color:rgba(167,139,250,0.7);">— Control Head (7m)</span>
-   <span style="color:var(--text-faint);">Not to scale — illustrative only</span>
- `;
+ document.getElementById('drip-scenario-peak-label').textContent =
+   `Peak: ${MONTH_NAMES[d.peakIdx]} | IF=${peak.IF>99?'no irrig.':peak.IF.toFixed(1)}d | Ta=${peak.Ta.toFixed(2)}hr/day | IRg=${peak.IRg_day.toFixed(2)}mm/day`;
+
+ const raw   = document.getElementById('drip-scenario-areas').value;
+ const areas = raw.split(',').map(s=>parseFloat(s.trim())).filter(a=>!isNaN(a)&&a>0).sort((a,b)=>a-b);
+ if(!areas.length) return;
+
+ const plantsPerHa = 10000 / (d.Sr * d.Sp);
+ const nShifts     = d.nShifts;
+
+ const scenarios = areas.map(area => {
+   const totalPlants  = plantsPerHa * area;
+   const totalEmitters= Math.round(totalPlants * d.Np);
+   // Q = total emitters × q (lph) / nShifts → m³/hr
+   const Q_total      = (totalPlants * d.Np * d.q / nShifts) / 1000;
+   // Water per irrigation event = IRg (mm/day) × wetted area per plant × total plants / efficiency
+   // IRg in mm = mm over the wetted fraction of the field
+   const waterPerEvent_m3 = peak.IRg_day * (d.Sr * d.Sp * d.Pw) * totalPlants / 1000;
+   // Power (kW) from TDH — Q scales, TDH stays same for same head conditions
+   const kw_scenario   = Q_total * d.TDH / (360 * d.Ep);
+
+   // Ta and IF are identical — per-plant, area-independent
+   const TaH = Math.floor(peak.Ta); const TaM = Math.round((peak.Ta-TaH)*60);
+   const TaStr = peak.Ta > 0 ? `${TaH>0?TaH+'hr ':''} ${TaM}min` : '—';
+   const IFStr = peak.IF > 99 ? 'No irrig.' : `${peak.IF.toFixed(1)} days`;
+
+   let action = '';
+   if(peak.IF > 99 || peak.IRg_day < 0.01) {
+     action = 'No irrigation — rainfall meets demand.';
+   } else {
+     action = `Run ${TaStr}/day. Irrigate every ${peak.IF.toFixed(1)} days. Q=${Q_total.toFixed(2)}m³/hr, ${totalEmitters.toLocaleString()} emitters.`;
+   }
+
+   return { area, totalPlants: Math.round(totalPlants), totalEmitters, Q_total, waterPerEvent_m3, kw_scenario, TaStr, IFStr, action };
+ });
+
+ // ── Results table ─────────────────────────────────────
+ let html = '';
+ scenarios.forEach(s => {
+   html += `<tr>
+     <td style="font-family:var(--mono);font-weight:700;color:var(--accent-blue);">${s.area.toFixed(2)}</td>
+     <td style="font-family:var(--mono);">${peak.IF>99?'—':peak.IF.toFixed(1)}</td>
+     <td style="font-family:var(--mono);color:var(--accent-amber);">${s.TaStr}</td>
+     <td style="font-family:var(--mono);">${peak.IRg_day.toFixed(3)}</td>
+     <td style="font-family:var(--mono);">${s.totalEmitters.toLocaleString()}</td>
+     <td style="font-family:var(--mono);color:var(--accent-green);">${s.Q_total.toFixed(3)}</td>
+     <td style="font-family:var(--mono);">${s.waterPerEvent_m3.toFixed(2)}</td>
+     <td style="font-family:var(--mono);color:var(--accent-teal);">${s.kw_scenario.toFixed(2)}</td>
+     <td style="font-size:10px;color:var(--text-dim);max-width:200px;word-wrap:break-word;">${s.action}</td>
+   </tr>`;
+ });
+ document.getElementById('drip-scenario-body').innerHTML = html;
+
+ // ── Charts ────────────────────────────────────────────
+ destroyChart('drip-scenario-q'); destroyChart('drip-scenario-kw');
+ const labels = scenarios.map(s => s.area.toFixed(2)+' ha');
+ const bgQ    = scenarios.map(() => 'rgba(46,204,138,0.65)');
+ const bgKW   = scenarios.map(() => 'rgba(77,184,255,0.65)');
+
+ let ctx = document.getElementById('chart-drip-scenario-q').getContext('2d');
+ charts['drip-scenario-q'] = new Chart(ctx, { type:'bar', data:{ labels, datasets:[{
+   label:'Q System (m³/hr)', data: scenarios.map(s=>+s.Q_total.toFixed(3)),
+   backgroundColor:bgQ, borderWidth:0
+ }]}, options:{ ...CHART_OPTS,
+   scales:{ ...CHART_OPTS.scales,
+     y:{ ...CHART_OPTS.scales.y, title:{display:true,text:'m³/hr',color:'#7a9ab8',font:{family:"'Times New Roman'"}}} }
+ }});
+
+ ctx = document.getElementById('chart-drip-scenario-kw').getContext('2d');
+ charts['drip-scenario-kw'] = new Chart(ctx, { type:'bar', data:{ labels, datasets:[{
+   label:'Power (kW)', data: scenarios.map(s=>+s.kw_scenario.toFixed(2)),
+   backgroundColor:bgKW, borderWidth:0
+ }]}, options:{ ...CHART_OPTS,
+   scales:{ ...CHART_OPTS.scales,
+     y:{ ...CHART_OPTS.scales.y, title:{display:true,text:'kW',color:'#7a9ab8',font:{family:"'Times New Roman'"}}} }
+ }});
+
+ // ── Bulk SMS ──────────────────────────────────────────
+ const region  = d.region || 'your region';
+ const today   = new Date().toLocaleDateString('en-ZA',{day:'2-digit',month:'short',year:'numeric'});
+ const cropSel = document.getElementById('drip-crop-group');
+ const cropName= cropSel ? cropSel.options[cropSel.selectedIndex].text.split('—')[0].trim() : 'Crop';
+ const block   = document.getElementById('drip-sms-block');
+ block.innerHTML = '';
+
+ window._dripScenarioSMS = scenarios.map(s => {
+   const l1 = `DRIP ALERT ${today} | ${region} | ${cropName} | Plot: ${s.area.toFixed(2)}ha`;
+   const l2 = peak.IF > 99
+     ? `No irrigation needed — rainfall meets crop demand.`
+     : `Run drip ${s.TaStr}/day. Irrigate every ${peak.IF.toFixed(1)} days. ${s.totalEmitters.toLocaleString()} emitters, ${s.Q_total.toFixed(2)}m³/hr.`;
+   const l3 = `IRg=${peak.IRg_day.toFixed(2)}mm/d IF=${peak.IF>99?'—':peak.IF.toFixed(1)}d ECw=${d.ECw}dS/m -IWMI`;
+   return { area: s.area, msg:`${l1}\n${l2}\n${l3}` };
+ });
+
+ window._dripScenarioSMS.forEach(s => {
+   const chars = s.msg.length;
+   const segs  = Math.ceil(chars/160);
+   const card  = document.createElement('div');
+   card.style.cssText = 'background:rgba(46,204,138,0.05);border:1px solid var(--border);border-radius:5px;padding:10px 12px;';
+   card.innerHTML = `
+     <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;">
+       <span style="font-family:var(--mono);font-weight:700;color:var(--accent-blue);font-size:12px;">${s.area.toFixed(2)} ha plot</span>
+       <div style="display:flex;gap:6px;align-items:center;">
+         <span style="font-size:9px;color:var(--text-dim);">${chars} chars · ${segs} SMS</span>
+         <button onclick="copySingleDripSMS(this)" data-msg="${encodeURIComponent(s.msg)}"
+           style="font-size:9px;padding:2px 8px;border:1px solid var(--border);border-radius:3px;
+                  background:var(--surface3);color:var(--text-dim);cursor:pointer;font-family:var(--serif);">Copy</button>
+       </div>
+     </div>
+     <div style="font-family:var(--mono);font-size:10px;color:var(--accent-green);
+                 white-space:pre-wrap;line-height:1.7;background:var(--input-bg);
+                 border-radius:4px;padding:8px 10px;">${s.msg}</div>`;
+   block.appendChild(card);
+ });
+}
+
+function copySingleDripSMS(btn) {
+ const msg = decodeURIComponent(btn.dataset.msg);
+ navigator.clipboard.writeText(msg).then(()=>{ btn.textContent='Copied!'; setTimeout(()=>btn.textContent='Copy',1500); });
+}
+function copyAllDripSMS() {
+ if(!window._dripScenarioSMS) return;
+ const all = window._dripScenarioSMS.map(s=>`=== ${s.area.toFixed(2)} ha ===\n${s.msg}`).join('\n\n');
+ navigator.clipboard.writeText(all).then(()=>alert('All drip messages copied'));
+}
+function exportDripSMS() {
+ if(!window._dripScenarioSMS) return;
+ const today = new Date().toISOString().slice(0,10);
+ let out = `DRIP SCENARIO SMS — ${dripCalcData.region||'unknown'}\nGenerated: ${new Date().toISOString()}\n${'='.repeat(60)}\n\n`;
+ window._dripScenarioSMS.forEach(s=>{ out += `PLOT: ${s.area.toFixed(2)} ha\n${'-'.repeat(40)}\n${s.msg}\n\n`; });
+ out += `${'='.repeat(60)}\nSend via Africa's Talking, Twilio, or your SMS gateway.\n`;
+ const blob = new Blob([out],{type:'text/plain'});
+ const a = document.createElement('a'); a.href=URL.createObjectURL(blob);
+ a.download=`drip_sms_${today}.txt`; a.click();
+}
+
+
+// ══════════════════════════════════════════════════════
+// DRIP WATER BALANCE CHARTS
+// ══════════════════════════════════════════════════════
+function renderDripCharts() {
+ if(!dripCalcData.monthly) return;
+ const {monthly, peakIdx} = dripCalcData;
+ ['drip-balance','drip-if','drip-ta-lr'].forEach(id => destroyChart(id));
+
+ // ── 1. Main water balance bar/line chart ─────────────
+ const offColor = m => !m.inSeas ? 'rgba(61,84,112,0.3)' : null;
+ let ctx = document.getElementById('chart-drip-balance').getContext('2d');
+ charts['drip-balance'] = new Chart(ctx, {
+   data:{ labels: MONTHS, datasets:[
+     { type:'bar', label:'ETcrop-loc (mm)',
+       data: monthly.map(m => m.inSeas ? +m.ETc_loc.toFixed(1) : 0),
+       backgroundColor: monthly.map((m,i) => i===peakIdx ? 'rgba(77,184,255,0.85)' : 'rgba(77,184,255,0.55)'),
+       borderColor:'#4db8ff', borderWidth:1 },
+     { type:'bar', label:'Eff. Rainfall (mm)',
+       data: monthly.map(m => m.inSeas ? +m.effR.toFixed(1) : 0),
+       backgroundColor: 'rgba(46,204,138,0.60)',
+       borderColor:'#2ecc8a', borderWidth:1 },
+     { type:'bar', label:'Net IRR req. (mm)',
+       data: monthly.map(m => m.inSeas ? +m.nir_mm.toFixed(1) : 0),
+       backgroundColor: monthly.map((m,i) => !m.inSeas ? 'rgba(61,84,112,0.15)' : i===peakIdx ? 'rgba(245,166,35,0.85)' : 'rgba(245,166,35,0.65)'),
+       borderColor:'#f5a623', borderWidth:1 },
+     { type:'bar', label:'Gross IRg (mm)',
+       data: monthly.map(m => m.inSeas ? +(m.IRg_day*DAYS_M[m.i||0]).toFixed(1) : 0),
+       backgroundColor: 'rgba(167,139,250,0.50)',
+       borderColor:'#a78bfa', borderWidth:1 },
+     { type:'line', label:'ETo (mm)',
+       data: monthly.map(m => +m.eto.toFixed(1)),
+       borderColor:'#e05252', borderWidth:2, pointRadius:3, tension:0.4, fill:false },
+   ]},
+   options:{ ...CHART_OPTS,
+     scales:{ ...CHART_OPTS.scales,
+       y:{ ...CHART_OPTS.scales.y,
+           title:{display:true,text:'mm/month',color:'#7a9ab8',font:{family:"'Times New Roman'"}}} }
+   }
+ });
+
+ // Fix: add month index to monthly data for chart
+ const monthly_idx = monthly.map((m,i)=>({...m, i}));
+
+ // Re-render with correct gross IRg
+ charts['drip-balance'].data.datasets[3].data = monthly_idx.map(m =>
+   m.inSeas ? +(m.IRg_day * DAYS_M[m.i]).toFixed(1) : 0
+ );
+ charts['drip-balance'].update();
+
+ // ── 2. Irrigation frequency chart ────────────────────
+ ctx = document.getElementById('chart-drip-if').getContext('2d');
+ charts['drip-if'] = new Chart(ctx, {
+   type:'bar',
+   data:{ labels: MONTHS, datasets:[{
+     label:'IF (days)',
+     data: monthly.map(m => !m.inSeas ? 0 : m.IF > 60 ? 60 : +m.IF.toFixed(1)),
+     backgroundColor: monthly.map((m,i) =>
+       !m.inSeas ? 'rgba(61,84,112,0.2)' :
+       i===peakIdx ? 'rgba(245,166,35,0.85)' :
+       m.IF > 30 ? 'rgba(46,204,138,0.6)' : 'rgba(77,184,255,0.65)'
+     ),
+     borderWidth:0,
+   }]},
+   options:{ ...CHART_OPTS,
+     scales:{ ...CHART_OPTS.scales,
+       y:{ ...CHART_OPTS.scales.y,
+           title:{display:true,text:'days (capped at 60)',color:'#7a9ab8',font:{family:"'Times New Roman'"}},
+           max:65 } }
+   }
+ });
+
+ // ── 3. Ta + Leaching dual-axis chart ─────────────────
+ ctx = document.getElementById('chart-drip-ta-lr').getContext('2d');
+ charts['drip-ta-lr'] = new Chart(ctx, {
+   data:{ labels: MONTHS, datasets:[
+     { type:'bar', label:'Ta run time (hr/day)',
+       data: monthly.map(m => m.inSeas ? +m.Ta.toFixed(3) : 0),
+       backgroundColor: monthly.map((m,i) => i===peakIdx ? 'rgba(245,166,35,0.85)' : 'rgba(245,166,35,0.55)'),
+       borderWidth:0, yAxisID:'y' },
+     { type:'line', label:'LR leaching req. (mm/day)',
+       data: monthly.map(m => m.inSeas ? +m.LR_day.toFixed(3) : 0),
+       borderColor:'#e05252', backgroundColor:'rgba(224,82,82,0.08)',
+       borderWidth:2, pointRadius:3, tension:0.4, fill:true, yAxisID:'y1' },
+   ]},
+   options:{ ...CHART_OPTS,
+     scales:{
+       x: CHART_OPTS.scales.x,
+       y:{ ...CHART_OPTS.scales.y,
+           title:{display:true,text:'Ta (hr/day)',color:'#f5a623',font:{family:"'Times New Roman'"}},
+           position:'left' },
+       y1:{ position:'right', ticks:{color:'#e05252',font:{size:9,family:"'Times New Roman'"}},
+            grid:{drawOnChartArea:false},
+            title:{display:true,text:'LR (mm/day)',color:'#e05252',font:{family:"'Times New Roman'"}},
+            min:0 }
+     }
+   }
+ });
 }
 
 (function init(){
